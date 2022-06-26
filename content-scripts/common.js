@@ -53,14 +53,18 @@ function setCookie(name, value, second, domain) {
 }
 function getParameterValue(name) {
 
-    var reg = new RegExp("[^\?&]?" + encodeURI(name) + "=[^&]+");
+    var reg = new RegExp("[^\?&]?" + encodeURIComponent(name) + "=[^&]+");
     var arr = location.search.match(reg);
     if (arr != null) {
-        return decodeURI(arr[0].substring(arr[0].search("=") + 1));
+        return decodeURIComponent(arr[0].substring(arr[0].search("=") + 1));
     }
     return "";
 }
 
+function getHashValue(name) {
+    let matches = location.hash.match(new RegExp(encodeURIComponent(name)+'=([^&]*)'));
+    return matches ? decodeURIComponent(matches[1]) : null;
+}
 
 async function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -81,6 +85,7 @@ export {
     getCookie,
     setCookie,
     getParameterValue,
+    getHashValue,
     sleep,
     getCameraSelection
 }

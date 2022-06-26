@@ -37,7 +37,8 @@ let context_menu_search_engin = () => {
 // navigator.userAgent
     let toToWangMaWuBi98Search = (word) => {
         word = word.split('')[0]
-        return `http://www.wangma.net.cn/search.aspx?sm=7&extension-define-keyword=${word}`
+        //return `http://www.wangma.net.cn/search.aspx?sm=7&extension-define-keyword=${word}`
+        return `http://www.wangma.net.cn/search.aspx?sm=7#extension-define-keyword=${word}`
     }
 
      //http://hy.httpcn.com/html/wubi/26/PWUYCQAZILTBPWCQAZ/

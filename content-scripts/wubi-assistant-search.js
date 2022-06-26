@@ -6,9 +6,10 @@ let init = () => {
 
 (async () => {
 
-    let {getParameterValue} = await import(chrome.runtime.getURL("/content-scripts/common.js"));
+    let {getParameterValue,getHashValue} = await import(chrome.runtime.getURL("/content-scripts/common.js"));
 
-    let keyword = getParameterValue('extension-define-keyword');
+    let keyword = getHashValue('extension-define-keyword');
+    console.log(keyword)
     if (keyword) {
         let input_text_box = document.querySelector('#textfield');
         if (input_text_box) {

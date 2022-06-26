@@ -13,7 +13,7 @@
         "http://www.wangma.net.cn/search.aspx?*"
       ],
       "js": [
-        "js/content-script/wubi-assistant-search.js"
+        "content-scripts/wubi-assistant-search.js"
       ],
       "run_at": "document_idle"
     }

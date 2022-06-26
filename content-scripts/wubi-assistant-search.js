@@ -1,7 +1,12 @@
-import {getParameterValue} from "/content-scripts/common.js";
-
 
 let init = () => {
+
+
+}
+
+(async () => {
+
+    let {getParameterValue} = await import(chrome.runtime.getURL("/content-scripts/common.js"));
 
     let keyword = getParameterValue('extension-define-keyword');
     if (keyword) {
@@ -10,10 +15,5 @@ let init = () => {
             input_text_box.setAttribute('value', keyword)
         }
     }
-}
-
-(async () => {
-
-    init()
 
 })();

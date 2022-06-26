@@ -1,0 +1,32 @@
+{
+  "name": "五笔码元或者字根搜索",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "description": "wubi-search-extension",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+    "content_scripts": [
+    {
+      "matches": [
+        "http://www.wangma.net.cn/search.aspx?*"
+      ],
+      "js": [
+        "js/content-script/wubi-assistant-search.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["tabs", "contextMenus"],
+  "web_accessible_resources": [
+    {
+      "resources": ["*.js", "*.css", "*.html"],
+      "matches": ["*://*/*"],
+      "extension_ids": [],
+      "use_dynamic_url": true
+    }
+  ],
+  "author": "https://github.com/jingjingxyk",
+  "homepage_url": "https://www.jingjingxyk.com"
+}

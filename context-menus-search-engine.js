@@ -56,6 +56,29 @@ let context_menu_search_engin = () => {
 
     //https://wubizhijia.com/e/search/result/?searchid=2644
 
+    let post_request_builder = (url, params) => {
+        console.log(url,params)
+        let source = fakePost.toString().replace(/(\n|\t)/gm, '').replace(/\s\s/gm, ' ');
+        return `javascript:${source}; fakePost('${url}', ${params});`
+
+    };
+
+    function fakePost(url, params) {
+        var form = document.createElement("form");
+        form.setAttribute("action", url);
+        form.setAttribute("method", "post");
+
+        for (let key in params) {
+            let hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+        document.body.appendChild(form);
+        form.submit();
+    }
+
 }
 
 export {context_menu_search_engin}

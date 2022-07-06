@@ -8,3 +8,11 @@
 3. [98五笔-项目](https://github.com/yanhuacuo/98wubi-tables.git)
 4. [98五笔文本码表](https://github.com/98wb/table.git)
 5. [王码](http://www.wangma.net.cn/search.aspx?sm=7)
+
+## [王码](http://www.wangma.net.cn/index.aspx?sm=0)
+```text
+联系电话：180 3728 0259
+
+电子邮件：beijing@wangma.com.cn
+
+```

@@ -8,13 +8,22 @@ let context_menu_search_engin = () => {
                 let url = null;
 
                 if (info.menuItemId.search(/custom-wubi-98-wangma-search-/) !== -1) {
-                    url = toToWangMaWuBi98Search(info.selectionText)
+                    url = goToWangMaWuBi98Search(info.selectionText)
                 }
 
-                   if (info.menuItemId.search(/custom-hao86-search-/) !== -1) {
-                    url = goToHao86Search(info.selectionText);
-                }
 
+               if (info.menuItemId.search(/custom-wubi-98-iamwawa-search-1/) !== -1) {
+                    url = goToiamwawaSearch(info.selectionText);
+                }
+                if (info.menuItemId.search(/custom-xpcha-search-/) !== -1) {
+                    url = goToxpchaSearch(info.selectionText);
+                }
+                if (info.menuItemId.search(/custom-wubizhijia-search-1/) !== -1) {
+                    url = goTowubizhijiaSearch(info.selectionText);
+                }
+                if (info.menuItemId.search(/custom-fanwenzhan-search-1/) !== -1) {
+                    url = goTofanwenzhanSearch(info.selectionText);
+                }
 
                 if (url) {
                     chrome.tabs.create(
@@ -35,10 +44,16 @@ let context_menu_search_engin = () => {
     )
 
 // navigator.userAgent
-    let toToWangMaWuBi98Search = (word) => {
+    let goToWangMaWuBi98Search = (word) => {
         word = word.split('')[0]
         //return `http://www.wangma.net.cn/search.aspx?sm=7&extension-define-keyword=${word}`
         return `http://www.wangma.net.cn/search.aspx?sm=7#extension-define-keyword=${word}`
+    }
+    let goToiamwawaSearch=(word)=>{
+        return `https://www.iamwawa.cn/wubi.html#extension-define-keyword=${word}`
+    }
+    let goToxpchaSearch=(word)=>{
+        return `https://wubi.xpcha.com/#extension-define-keyword=${word}`
     }
 
      //http://hy.httpcn.com/html/wubi/26/PWUYCQAZILTBPWCQAZ/
@@ -55,6 +70,15 @@ let context_menu_search_engin = () => {
     //https://www.fanwenzhan.com/wubi/6KGo.shtml
 
     //https://wubizhijia.com/e/search/result/?searchid=2644
+
+    let goTowubizhijiaSearch=(word)=>{
+        return `https://wubizhijia.com/#extension-define-keyword=${word}`
+    }
+
+    let goTofanwenzhanSearch=(word)=>{
+        return `https://www.fanwenzhan.com/wubi/6Ima.shtml#extension-define-keyword=${word}`
+    }
+
 
     let post_request_builder = (url, params) => {
         console.log(url,params)

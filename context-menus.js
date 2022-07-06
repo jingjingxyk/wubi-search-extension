@@ -7,7 +7,7 @@ let context_menu_init=()=>{
             contexts: ['selection'],
             documentUrlPatterns: ["https://*/*", "http://*/*"],
             enabled: true,
-            title: "五笔查询",
+            title: "王码五笔查询",
             id: 'custom-wubi-98-wangma-search-1',
             //  id: 'custom-wubi-98-wangma-search-'+(new Date()).toISOString()
         },
@@ -15,7 +15,61 @@ let context_menu_init=()=>{
             console.log(info)
         }
     );
-
+    chrome.contextMenus.create(
+        {
+            checked: true,
+            contexts: ['selection'],
+            documentUrlPatterns: ["https://*/*", "http://*/*"],
+            enabled: true,
+            title: "五笔编码查询1",
+            id: 'custom-wubi-98-iamwawa-search-1',
+            //  id: 'custom-wubi-98-wangma-search-'+(new Date()).toISOString()
+        },
+        (info) => {
+            console.log(info)
+        }
+    );
+    chrome.contextMenus.create(
+        {
+            checked: true,
+            contexts: ['selection'],
+            documentUrlPatterns: ["https://*/*", "http://*/*"],
+            enabled: true,
+            title: "五笔编码查询2",
+            id: 'custom-xpcha-search-1',
+            //  id: 'custom-wubi-98-wangma-search-'+(new Date()).toISOString()
+        },
+        (info) => {
+            console.log(info)
+        }
+    );    chrome.contextMenus.create(
+        {
+            checked: true,
+            contexts: ['selection'],
+            documentUrlPatterns: ["https://*/*", "http://*/*"],
+            enabled: true,
+            title: "五笔之家查询",
+            id: 'custom-wubizhijia-search-1',
+            //  id: 'custom-wubi-98-wangma-search-'+(new Date()).toISOString()
+        },
+        (info) => {
+            console.log(info)
+        }
+    );
+    chrome.contextMenus.create(
+        {
+            checked: true,
+            contexts: ['selection'],
+            documentUrlPatterns: ["https://*/*", "http://*/*"],
+            enabled: true,
+            title: "五笔之家查询3",
+            id: 'custom-fanwenzhan-search-1',
+            //  id: 'custom-wubi-98-wangma-search-'+(new Date()).toISOString()
+        },
+        (info) => {
+            console.log(info)
+        }
+    );
 
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "五笔码元或者字根搜索",
+  "name": "五笔查询",
   "version": "0.1.0",
   "manifest_version": 3,
   "description": "wubi-search-extension",
@@ -10,7 +10,11 @@
     "content_scripts": [
     {
       "matches": [
-        "http://www.wangma.net.cn/search.aspx?*"
+        "http://www.wangma.net.cn/search.aspx?*",
+        "https://www.iamwawa.cn/wubi.html",
+        "https://wubi.xpcha.com/",
+        "https://wubizhijia.com/",
+        "https://www.fanwenzhan.com/wubi/6Ima.shtml"
       ],
       "js": [
         "content-scripts/wubi-assistant-search.js"
